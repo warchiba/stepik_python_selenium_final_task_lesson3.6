@@ -12,7 +12,7 @@ def browser(request):
 	language = request.config.getoption("--language")
 	options = Options()
 	options.add_experimental_option('prefs', {'intl.accept_languages': language})
-	browser = webdriver.Chrome('../chromedriver.exe', options=options)
+	browser = webdriver.Chrome(options=options)
 	yield browser
 	print("\nquit browser..")
 	browser.quit()
